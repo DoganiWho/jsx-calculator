@@ -1,6 +1,7 @@
-import { ACTIONS } from "./App"
+import { ACTIONS } from "./actions"
+import PropTypes from 'prop-types'
 
-export default function OperationButton({ dispatch, operation }) {
+export function OperationButton({ dispatch, operation }) {
   return (
     <button
       onClick={() =>
@@ -10,4 +11,9 @@ export default function OperationButton({ dispatch, operation }) {
       {operation}
     </button>
   )
+}
+
+OperationButton.propTypes = {
+    dispatch: PropTypes.func.isRequired,
+    operation: PropTypes.string.isRequired
 }
